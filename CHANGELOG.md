@@ -6,6 +6,13 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta2
+
+>Upgrade suggestion: **CRITICAL**. First release of the SDK.
+
+* Fixed a bug that was causing incorrect predictions
+
+
 ## 3.0.0-beta1
 
 >Upgrade suggestion: **HIGH**. First release of the SDK.
