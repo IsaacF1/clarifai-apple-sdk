@@ -6,14 +6,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CAIConstants.h"
 #import "CAIDataModel.h"
 
 @class CAIModel;
 
 @interface Clarifai : NSObject
 
+/// Returns an instance of the general model
 @property (nonatomic, strong, nonnull, readonly) CAIModel *generalModel;
 
+/// Specifies the log level output to the console
+@property (nonatomic, unsafe_unretained) CAILogLevel logLevel;
+
+/// Singleton instance
 + (nonnull instancetype)sharedInstance;
 
 - (void)deleteEntities:(nonnull NSArray<CAIDataModel *> *)entities NS_SWIFT_NAME(delete(entities:));
@@ -24,6 +30,8 @@
 
 - (void)saveEntities:(nonnull NSArray<CAIDataModel *> *)entities NS_SWIFT_NAME(save(entities:));
 
-- (void)startWithAppKey:(nonnull NSString *)appKey NS_SWIFT_NAME(start(appKey:));
+- (void)startWithApiKey:(nonnull NSString *)apiKey NS_SWIFT_NAME(start(apiKey:));
+
+- (void)startWithAppKey:(nonnull NSString *)appKey NS_SWIFT_NAME(start(appKey:)) __attribute__((deprecated("use start(apiKey:)/startWithApiKey: instead")));
 
 @end

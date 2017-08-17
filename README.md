@@ -21,7 +21,7 @@ target '<Your Target>' do
     platform :ios, '8.2'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta2'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta3'
 end
 ```
 
@@ -51,9 +51,15 @@ git clone https://github.com/Clarifai/clarifai-apple-sdk.git
 
 You should be able to build your project and start using the SDK in your project.
 
+## Git LFS
+
+The binary contained in the framework is managed by GitHub using `git-lfs`. Make sure you have it installed on your system.
+
+If you don't have it installed yet, you can find details at: [https://git-lfs.github.com](https://git-lfs.github.com)
+
 ## Start the SDK
 
-The Clarifai SDK is initialized by calling the `startWithAppKey` method. We recommend to start it when your app finishes launching, but that is not absolutely required. And don't worry about hogging the launching of your app. We offload the work to background threads; there should be little to no impact.
+The Clarifai SDK is initialized by calling the `startWithApiKey` method. We recommend to start it when your app finishes launching, but that is not absolutely required. And don't worry about hogging the launching of your app. We offload the work to background threads; there should be little to no impact.
 
 **Swift**
 
@@ -61,7 +67,7 @@ The Clarifai SDK is initialized by calling the `startWithAppKey` method. We reco
 import Clarifai_Apple_SDK
 
 func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    Clarifai.sharedInstance().start(appKey:"<App key goes here>")
+    Clarifai.sharedInstance().start(apiKey:"<API Key goes here>")
 
     return true
 }
@@ -73,11 +79,27 @@ func application(application: UIApplication, didFinishLaunchingWithOptions launc
 @import Clarifai_Apple_SDK;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[Clarifai sharedInstance] startWithAppKey:@"<App key goes here>"];
+    [[Clarifai sharedInstance] startWithApiKey:@"<API Key goes here>"];
 
     return YES;
 }
 ```
+
+
+## General model availability notifications
+
+Clarifai's *general model* becomes available to the SDK on demand. After you start the SDK, with a valid API Key, for the first time and try to access the *general model*, the SDK will download it in the background and store it locally for future use.
+
+You can be notified on the progress of the availability of the SDK by registering to listen to the following notifications:
+
+| Swift | Objective-C | Description |
+|:---:|:---:|:---|
+| CAIWillDownloadGeneralModel | CAIWillDownloadGeneralModelNotification | Broadcast right before the SDK begins downloading the general model |
+| CAIDidDownloadGeneralModel | CAIDidDownloadGeneralModelNotification | Broadcast right after the general model has been downloaded |
+| CAIGeneralModelDidBecomeAvailable | CAIGeneralModelDidBecomeAvailableNotification | Broadcast when the general model has become available to use |
+
+The first two notifications usually happen only once, when you first use the SDK. After being downloaded the *general model* remains persisted on device. The last notification, on the other hand, is broadcast every time the SDK is started.
+
 
 ## Learn and do more
 

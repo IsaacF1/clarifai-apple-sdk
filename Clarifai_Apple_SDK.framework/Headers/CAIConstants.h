@@ -19,4 +19,17 @@ extern NSString * const CAIDidDownloadGeneralModelNotification;
 /// Notification broadcasted immediately after the general model has become available to use.
 extern NSString * const CAIGeneralModelDidBecomeAvailableNotification;
 
+typedef NS_ENUM(NSUInteger, CAILogLevel) {
+    /// Nothing is displayed on the console
+    CAILogLevelNone = 0,
+    /// Only errors are displayed on the console
+    CAILogLevelErrors,
+    /// Warnings and errors are displayed on the console
+    CAILogLevelWarnings,
+    /// Debug information is shown, plus warnings and errors
+    CAILogLevelDebug,
+    /// Detailed information is shown, plus debug, warnings, and errors
+    CAILogLevelVerbose
+} NS_SWIFT_NAME(LogLevel);
+
 #endif

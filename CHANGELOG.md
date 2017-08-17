@@ -6,6 +6,17 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta3
+
+>Upgrade suggestion: **HIGH**. First release of the SDK.
+
+* Deprecated `start(appKey:)`/`startWithAppKey:` in favor of `start(apiKey:)`/`startWithApiKey:`
+* Log level for messages output to the console
+* Notifications for download and availability of the general model
+* Fixed null outputs on predictions
+* Fixed `unknown NSNumber`
+
+
 ## 3.0.0-beta2
 
 >Upgrade suggestion: **CRITICAL**. First release of the SDK.
