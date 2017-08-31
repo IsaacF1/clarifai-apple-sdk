@@ -12,6 +12,7 @@ Sign up for a free developer account at: https://developer.clarifai.com/signup/
 
 The Clarifai-Apple-SDK is available via [CocoaPods](https://cocoapods.org/?q=clarifai-apple-sdk) or can be installed manually. Follow the instructions below based on your preference.
 
+
 ## CocoaPods
 
 To integrate the SDK using CocoaPods, specify it in your [Podfile](https://guides.cocoapods.org/syntax/podfile.html):
@@ -21,11 +22,12 @@ target '<Your Target>' do
     platform :ios, '8.2'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta3'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta4'
 end
 ```
 
-> iOS 8.2 is the minimum version the Clarifai SDK supports.
+> iOS 8.2 is the minimum version supported by the Clarifai SDK.
+
 
 ## Manual installation
 
@@ -37,7 +39,7 @@ git clone https://github.com/Clarifai/clarifai-apple-sdk.git
 
 1. Add the **Clarifai-Apple-SDK.framework** to your project's **Embedded Binaries**.
 
-    * From your Xcode project/workspace go to the project configurations, **General** tab, and click the **+** button under the **Embedded Binaries** section. Navigate to the directory where you cloned the repository abd select the **Clarifai-Apple-SDK.framework**
+    * From your Xcode project/workspace go to the project configurations, **General** tab, and click the **+** button under the **Embedded Binaries** section. Navigate to the directory where you cloned the repository and select the **Clarifai-Apple-SDK.framework**
 
 2. Include the following required dependencies to **Linked Frameworks and Libraries**:
 
@@ -51,55 +53,77 @@ git clone https://github.com/Clarifai/clarifai-apple-sdk.git
 
 You should be able to build your project and start using the SDK in your project.
 
+
 ## Git LFS
 
 The binary contained in the framework is managed by GitHub using `git-lfs`. Make sure you have it installed on your system.
 
 If you don't have it installed yet, you can find details at: [https://git-lfs.github.com](https://git-lfs.github.com)
 
+
 ## Start the SDK
 
 The Clarifai SDK is initialized by calling the `startWithApiKey` method. We recommend to start it when your app finishes launching, but that is not absolutely required. And don't worry about hogging the launching of your app. We offload the work to background threads; there should be little to no impact.
 
-**Swift**
+* **Swift**
 
-```swift
-import Clarifai_Apple_SDK
+    ```swift
+    import Clarifai_Apple_SDK
 
-func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    Clarifai.sharedInstance().start(apiKey:"<API Key goes here>")
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Clarifai.sharedInstance().start(apiKey:"<API Key goes here>")
 
-    return true
-}
-```
+        return true
+    }
+    ```
 
-**Objective-C**
+* **Objective-C**
 
-```objective-c
-@import Clarifai_Apple_SDK;
+    ```objective-c
+    @import Clarifai_Apple_SDK;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[Clarifai sharedInstance] startWithApiKey:@"<API Key goes here>"];
+    - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+        [[Clarifai sharedInstance] startWithApiKey:@"<API Key goes here>"];
 
-    return YES;
-}
-```
+        return YES;
+    }
+    ```
 
 
 ## General model availability notifications
 
-Clarifai's *general model* becomes available to the SDK on demand. After you start the SDK, with a valid API Key, for the first time and try to access the *general model*, the SDK will download it in the background and store it locally for future use.
+Clarifai's *general model* becomes available to the SDK on demand. After you start the SDK for the first time, with a valid API Key, the model will be made available and cached locally for future faster use.
 
 You can be notified on the progress of the availability of the SDK by registering to listen to the following notifications:
 
 | Swift | Objective-C | Description |
 |:---:|:---:|:---|
-| CAIWillDownloadGeneralModel | CAIWillDownloadGeneralModelNotification | Broadcast right before the SDK begins downloading the general model |
-| CAIDidDownloadGeneralModel | CAIDidDownloadGeneralModelNotification | Broadcast right after the general model has been downloaded |
-| CAIGeneralModelDidBecomeAvailable | CAIGeneralModelDidBecomeAvailableNotification | Broadcast when the general model has become available to use |
+| `CAIWillFetchModel` | `CAIWillFetchModelNotification` | Broadcast right before the SDK begins fetching a model |
+| `CAIDidFetchModel` | `CAIDidFetchModelNotification` | Broadcast right after a model has been fetched |
+| `CAIModelDidBecomeAvailable` | `CAIModelDidBecomeAvailableNotification` | Broadcast when a model has become available to use |
 
-The first two notifications usually happen only once, when you first use the SDK. After being downloaded the *general model* remains persisted on device. The last notification, on the other hand, is broadcast every time the SDK is started.
+The first two notifications usually happen only once, when you first use the SDK. After becoming available a model remains cached locally. The last notification, on the other hand, is broadcast every time the SDK is started.
 
+Each of the notifications above contain a payload (`userInfo`) with the `id` of the model. Retrieve it by using the `CAIModelUniqueIdentifierKey` key.
+
+* **Swift**
+
+    ```swift
+    func handleModelDidBecomeAvailable(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let modelId = userInfo[CAIModelDidBecomeAvailable] as? String
+        }
+    }
+    ```
+
+* **Objective-C**
+
+    ```objective-c
+    - (void)handleModelDidBecomeAvailable:(NSNotification *)notification {
+        NSDictionary *userInfo = [notification UserInfo];
+        NSString *modelId = userInfo[CAIModelUniqueIdentifierKey];
+    }
+    ```
 
 ## Learn and do more
 

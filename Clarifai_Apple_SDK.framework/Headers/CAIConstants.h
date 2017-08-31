@@ -10,14 +10,23 @@
 
 #import <Foundation/Foundation.h>
 
-/// Notification broadcasted right before the downloading of the general model from the cloud begins.
-extern NSString * const CAIWillDownloadGeneralModelNotification;
+/// Notification broadcasted right before fetching of a model begins. The model's unique identifier is included in the payload (userInfo) of the notification.
+extern NSString * const CAIWillFetchModelNotification;
 
-/// Notification broadcasted immediately after the general model has been downloaded from the cloud.
-extern NSString * const CAIDidDownloadGeneralModelNotification;
+/// Notification broadcasted immediately after fetching a model. The model's unique identifier is included in the payload (userInfo) of the notification.
+extern NSString * const CAIDidFetchModelNotification;
 
-/// Notification broadcasted immediately after the general model has become available to use.
-extern NSString * const CAIGeneralModelDidBecomeAvailableNotification;
+/// Notification broadcasted when a fetched model has become available to use. The model's unique identifier is included in the payload (userInfo) of the notification.
+extern NSString * const CAIModelDidBecomeAvailableNotification;
+
+/// Key to a model's unique identier in payload (userInfo) of a notification.
+extern NSString * const CAIModelUniqueIdentifierKey;
+
+extern NSString * const CAIWillDownloadGeneralModelNotification __attribute__((deprecated("use CAIWillFetchModelNotification instead")));
+
+extern NSString * const CAIDidDownloadGeneralModelNotification __attribute__((deprecated("use CAIDidFetchModelNotification instead")));
+
+extern NSString * const CAIGeneralModelDidBecomeAvailableNotification __attribute__((deprecated("use CAIModelDidBecomeAvailableNotification instead")));
 
 typedef NS_ENUM(NSUInteger, CAILogLevel) {
     /// Nothing is displayed on the console
@@ -31,5 +40,14 @@ typedef NS_ENUM(NSUInteger, CAILogLevel) {
     /// Detailed information is shown, plus debug, warnings, and errors
     CAILogLevelVerbose
 } NS_SWIFT_NAME(LogLevel);
+
+typedef NS_ENUM(NSUInteger, CAISDKStatus) {
+    /// The SDK has not been initialized
+    CAISDKStatusNotInitialized = 0,
+    /// Initialization has started, but has not finished yet
+    CAISDKStatusInitializing,
+    /// The SDK is initialized and ready for use
+    CAISDKStatusInitialized
+} NS_SWIFT_NAME(SDKStatus);
 
 #endif

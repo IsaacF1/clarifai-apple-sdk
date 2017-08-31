@@ -6,13 +6,28 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta4
+
+>Upgrade suggestion: **MODERATE**. Fourth beta of the SDK.
+
+* Deprecated the notifications (see [README](https://github.com/Clarifai/clarifai-apple-sdk/blob/master/README.md#general-model-availability-notifications)):
+    * `CAIWillDownloadGeneralModelNotification`, `CAIDidDownloadGeneralModelNotification`, and `CAIGeneralModelDidBecomeAvailableNotification`
+
+    in favor of
+
+    * `CAIWillFetchModelNotification`, `CAIDidFetchModelNotification`, and `CAIModelDidBecomeAvailableNotification`
+* Fixed issue with downloading remote custom models
+* Prevent the SDK from being started more than once
+* Internal protobuf improvements
+
+
 ## 3.0.0-beta3
 
->Upgrade suggestion: **HIGH**. First release of the SDK.
+>Upgrade suggestion: **HIGH**. Third beta of SDK.
 
 * Deprecated `start(appKey:)`/`startWithAppKey:` in favor of `start(apiKey:)`/`startWithApiKey:`
 * Log level for messages output to the console
-* Notifications for download and availability of the general model
+* Notifications for fetching and availability of the general model
 * Fixed null outputs on predictions
 * Fixed `unknown NSNumber`
 
