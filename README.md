@@ -22,7 +22,7 @@ target '<Your Target>' do
     platform :ios, '8.2'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta4'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta5'
 end
 ```
 
@@ -71,7 +71,7 @@ The Clarifai SDK is initialized by calling the `startWithApiKey` method. We reco
     import Clarifai_Apple_SDK
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Clarifai.sharedInstance().start(apiKey:"<API Key goes here>")
+        Clarifai.sharedInstance().start(apiKey:"<Your API Key>")
 
         return true
     }
@@ -83,7 +83,7 @@ The Clarifai SDK is initialized by calling the `startWithApiKey` method. We reco
     @import Clarifai_Apple_SDK;
 
     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-        [[Clarifai sharedInstance] startWithApiKey:@"<API Key goes here>"];
+        [[Clarifai sharedInstance] startWithApiKey:@"<Your API Key>"];
 
         return YES;
     }

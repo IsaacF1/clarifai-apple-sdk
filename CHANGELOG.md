@@ -6,6 +6,14 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta5
+
+>Upgrade suggestion: **MODERATE**. Fifth beta of the SDK.
+
+* Network usage can now be constrained to WiFi only (`networkConstraint`)
+* Property containing the SDK initialization status (`sdkStatus`)
+* Reference app with examples on how to use the SDK
+
 ## 3.0.0-beta4
 
 >Upgrade suggestion: **MODERATE**. Fourth beta of the SDK.

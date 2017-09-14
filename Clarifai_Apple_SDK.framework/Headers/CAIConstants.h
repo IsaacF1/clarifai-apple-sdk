@@ -50,4 +50,11 @@ typedef NS_ENUM(NSUInteger, CAISDKStatus) {
     CAISDKStatusInitialized
 } NS_SWIFT_NAME(SDKStatus);
 
+typedef NS_ENUM(NSUInteger, CAINetworkConstraint) {
+    /// Syncing with the server happens anytime an internet connection of any type is available.
+    CAINetworkConstraintNone = 0,
+    /// Syncing with the server only happens over wifi connections.
+    CAINetworkConstraintWiFiOnly
+} NS_SWIFT_NAME(NetworkConstraint);
+
 #endif

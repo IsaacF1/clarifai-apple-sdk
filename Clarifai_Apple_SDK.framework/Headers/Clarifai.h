@@ -19,6 +19,12 @@
 /// Specifies the log level output to the console
 @property (nonatomic, unsafe_unretained) CAILogLevel logLevel;
 
+/// Specifies the initialization status of the SDK
+@property (nonatomic, unsafe_unretained, readonly) CAISDKStatus sdkStatus;
+
+/// Defines network communication constraints. Default value is no constraint
+@property (nonatomic, unsafe_unretained) CAINetworkConstraint networkConstraint;
+
 /// Singleton instance
 + (nonnull instancetype)sharedInstance;
 
