@@ -1,0 +1,7 @@
+platform :ios, '8.2'
+
+target 'Dexter' do
+    use_frameworks!
+
+    pod 'Clarifai-Apple-SDK', :path => '../../Clarifai-Apple-SDK.podspec'
+end
