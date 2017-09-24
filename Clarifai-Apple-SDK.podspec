@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "Clarifai-Apple-SDK"
-    s.version          = "3.0.0-beta6"
+    s.version          = "3.0.0-beta7"
     s.summary          = "Clarifai Apple SDK."
 
     s.description      = <<-DESC

@@ -6,12 +6,20 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta7
+
+>Upgrade suggestion: **CRITICAL**. Seventh beta of the SDK.
+
+* Disable code coverage due to a change in behavior in [Xcode 9](https://developer.apple.com/library/content/qa/qa1964/_index.html#//apple_ref/doc/uid/DTS40017675-CH1-INSPECT)
+
+
 ## 3.0.0-beta6
 
 >Upgrade suggestion: **CRITICAL**. Sixth beta of the SDK.
 
 * Fixed a crash caused by corrupted cached models
 * Framework compiled with Xcode 9
+
 
 ## 3.0.0-beta5
 
@@ -20,6 +28,7 @@
 * Network usage can now be constrained to WiFi only (`networkConstraint`)
 * Property containing the SDK initialization status (`sdkStatus`)
 * Reference app with examples on how to use the SDK
+
 
 ## 3.0.0-beta4
 
