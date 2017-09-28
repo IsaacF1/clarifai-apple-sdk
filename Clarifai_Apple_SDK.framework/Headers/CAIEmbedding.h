@@ -9,7 +9,7 @@
 
 #pragma mark - CAIEmbedding
 NS_SWIFT_NAME(Embedding)
-@interface CAIEmbedding : NSObject
+@interface CAIEmbedding : NSObject <NSCoding>
 
 @property (nonatomic, strong, readonly) NSArray<NSNumber *> *values;
 

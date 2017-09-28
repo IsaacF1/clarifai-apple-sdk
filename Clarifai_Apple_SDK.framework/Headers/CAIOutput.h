@@ -12,7 +12,7 @@
 @class CAIStatus;
 
 NS_SWIFT_NAME(Output)
-@interface CAIOutput : CAIDataModel
+@interface CAIOutput : CAIDataModel <NSCoding>
 
 /// Output configuration with regards to the Model
 @property (nonatomic, strong, nonnull, readonly) CAIOutputConfiguration *configuration;

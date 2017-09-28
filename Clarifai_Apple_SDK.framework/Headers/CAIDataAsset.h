@@ -18,7 +18,7 @@ typedef NS_ENUM(NSUInteger, CAIDataAssetType) {
 
 
 NS_SWIFT_NAME(DataAsset)
-@interface CAIDataAsset : NSObject
+@interface CAIDataAsset : NSObject <NSCoding>
 
 @property (nonatomic, strong, nullable, readonly) NSArray<CAIConcept *> *concepts;
 @property (nonatomic, strong, null_resettable) CAIImage *image;

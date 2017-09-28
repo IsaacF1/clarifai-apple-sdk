@@ -14,7 +14,7 @@
  either train it or for the Model to predict what is the Input.
  */
 NS_SWIFT_NAME(Input)
-@interface CAIInput : CAIDataModel
+@interface CAIInput : CAIDataModel <NSCoding>
 
 /// Creation time expressed in seconds since epoch time.
 @property (nonatomic, readonly) NSTimeInterval createdAt;

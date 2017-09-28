@@ -11,7 +11,7 @@
 @class CAIStatus;
 
 NS_SWIFT_NAME(ModelVersion)
-@interface CAIModelVersion : NSObject
+@interface CAIModelVersion : NSObject <NSCoding>
 
 /// Number of active convepts associated with this version of the Model.
 @property (nonatomic, readonly) NSUInteger activeConceptCount;

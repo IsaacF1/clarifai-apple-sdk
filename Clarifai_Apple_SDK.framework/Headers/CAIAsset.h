@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 
 NS_SWIFT_NAME(Asset)
-@interface CAIAsset : NSObject
+@interface CAIAsset : NSObject <NSCoding>
 
 /// String with the Base64 representation of the asset
 @property (nonatomic, strong, nullable) NSString *base64;

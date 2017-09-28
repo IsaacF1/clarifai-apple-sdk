@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger, CAIEntityType) {
 } NS_SWIFT_NAME(EntityType);
 
 NS_SWIFT_NAME(DataModel)
-@interface CAIDataModel : NSObject {
+@interface CAIDataModel : NSObject <NSCoding> {
 @protected
     CAIEntityType _entityType;
 }

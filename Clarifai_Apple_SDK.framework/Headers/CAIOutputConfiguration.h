@@ -10,7 +10,7 @@
 @class CAIConcept;
 
 NS_SWIFT_NAME(OutputConfiguration)
-@interface CAIOutputConfiguration : NSObject
+@interface CAIOutputConfiguration : NSObject <NSCoding>
 
 /// Flag indicating whether the concept predictions must sum to 1.
 @property (nonatomic) BOOL conceptsMutuallyExclusive;

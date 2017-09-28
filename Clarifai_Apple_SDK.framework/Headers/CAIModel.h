@@ -13,7 +13,7 @@
 @class CAIOutput;
 
 NS_SWIFT_NAME(Model)
-@interface CAIModel : CAIDataModel
+@interface CAIModel : CAIDataModel <NSCoding>
 
 /// The app id the model is associated with.
 @property (nonatomic, strong, nullable) NSString *appId;
