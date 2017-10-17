@@ -22,7 +22,7 @@ target '<Your Target>' do
     platform :ios, '8.2'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta8'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta9'
 end
 ```
 
@@ -37,11 +37,23 @@ The best way to stay up-to-date with the latest version of the SDK with a manual
 git clone https://github.com/Clarifai/clarifai-apple-sdk.git
 ```
 
-1. Add the **Clarifai-Apple-SDK.framework** to your project's **Embedded Binaries**.
+1. In your project's root directory, *$(PROJECT_DIR)* [the same directory as the .xcodeproj file], create a directory named **Clarifai** and move the **Clarifai-Apple-SDK.framework** to that directory
+    ```bash
+    cd <project root directory>
+    mkdir Clarifai
+    cp -r <directory the SDK was cloned to>/Clarifai_Apple_SDK.framework <project root directory>/Clarifai
+    ```
+
+2. Also, copy to the same **Clarifai** directory, the `setup_framework.sh` script.
+    ```bash
+    cp -r <directory the SDK was cloned to>/scripts/setup_framework.sh <project root directory>/Clarifai
+    ```
+
+3. Add the **Clarifai-Apple-SDK.framework** to your project's **Embedded Binaries**.
 
     * From your Xcode project/workspace go to the project configurations, **General** tab, and click the **+** button under the **Embedded Binaries** section. Navigate to the directory where you cloned the repository and select the **Clarifai-Apple-SDK.framework**
 
-2. Include the following required dependencies to **Linked Frameworks and Libraries**:
+4. Include the following required dependencies to **Linked Frameworks and Libraries**:
 
     * `Accelerate.framework`
     * `CoreGraphics.framework`
@@ -50,6 +62,15 @@ git clone https://github.com/Clarifai/clarifai-apple-sdk.git
     * `libsqlite3`
     * `libz`
     * `UIKit.framework`
+
+5. Create a new **Run Script Build Phase** (Xcode > Editor > Add Build Phase > Add Run Script Build Phase). In the execution line enter:
+    ```bash
+    "$(PROJECT_DIR)/Clarifai/setup_framework.sh"
+    ```
+
+6. Make sure the position of the new **Run Script** is after **Compile Sources** and before **Link Binary With Libraries**. If needed drag and drop it to the right position.
+    <img src="https://user-images.githubusercontent.com/204792/31673152-7acff1a0-b32c-11e7-92bb-cb2a53ab1383.png" width="640">
+
 
 You should be able to build your project and start using the SDK in your project.
 

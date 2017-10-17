@@ -6,6 +6,14 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta9
+
+>Upgrade suggestion: **LOW**. Ninth beta of the SDK.
+
+* New instructions and script for manual installation
+* Reduced library size
+
+
 ## 3.0.0-beta8
 
 >Upgrade suggestion: **LOW**. Eighth beta of the SDK.
