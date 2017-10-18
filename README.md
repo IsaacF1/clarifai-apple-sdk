@@ -13,6 +13,13 @@ Sign up for a free developer account at: https://developer.clarifai.com/signup/
 The Clarifai-Apple-SDK is available via [CocoaPods](https://cocoapods.org/?q=clarifai-apple-sdk) or can be installed manually. Follow the instructions below based on your preference.
 
 
+>### Git LFS
+>
+>Before we proceed with the installation, please make sure you have Git-LFS installed on your system. The binary contained in the framework is managed by GitHub using `git-lfs`.
+>
+>If you don't have it installed yet, you can find details at: [https://git-lfs.github.com](https://git-lfs.github.com)
+
+
 ## CocoaPods
 
 To integrate the SDK using CocoaPods, specify it in your [Podfile](https://guides.cocoapods.org/syntax/podfile.html):
@@ -22,7 +29,7 @@ target '<Your Target>' do
     platform :ios, '8.2'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta9'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta10'
 end
 ```
 
@@ -73,13 +80,6 @@ git clone https://github.com/Clarifai/clarifai-apple-sdk.git
 
 
 You should be able to build your project and start using the SDK in your project.
-
-
-## Git LFS
-
-The binary contained in the framework is managed by GitHub using `git-lfs`. Make sure you have it installed on your system.
-
-If you don't have it installed yet, you can find details at: [https://git-lfs.github.com](https://git-lfs.github.com)
 
 
 ## Start the SDK

@@ -6,6 +6,13 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta10
+
+>Upgrade suggestion: **HIGH**. Upgrade if you are using beta 9 and need to archive an app with bitcode support
+
+* Fixed a compilation bug that would prevent archiving an app with bitcode support
+
+
 ## 3.0.0-beta9
 
 >Upgrade suggestion: **LOW**. Ninth beta of the SDK.
