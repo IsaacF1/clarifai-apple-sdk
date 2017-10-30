@@ -6,6 +6,14 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta11
+
+>Upgrade suggestion: **HIGH**. Upgrade if you have seen a crash when predicting
+
+* Fixed a bug that could cause prediction to crash
+* Fixed a bug that could cause a Concept to be initialized without _id_ or _name_
+
+
 ## 3.0.0-beta10
 
 >Upgrade suggestion: **HIGH**. Upgrade if you are using beta 9 and need to archive an app with bitcode support

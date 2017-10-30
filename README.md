@@ -29,8 +29,14 @@ target '<Your Target>' do
     platform :ios, '8.2'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta10'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta11'
 end
+```
+
+Install with:
+
+```bash
+pod install --repo-update
 ```
 
 > iOS 8.2 is the minimum version supported by the Clarifai SDK.
