@@ -19,6 +19,9 @@ extern NSString * const CAIDidFetchModelNotification;
 /// Notification broadcasted when a fetched model has become available to use. The model's unique identifier is included in the payload (userInfo) of the notification.
 extern NSString * const CAIModelDidBecomeAvailableNotification;
 
+/// Notification broadcasted when the SDK has finished initializing
+extern NSString * const CAIDidFinishInitializingNotification;
+
 /// Key to a model's unique identier in payload (userInfo) of a notification.
 extern NSString * const CAIModelUniqueIdentifierKey;
 

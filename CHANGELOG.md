@@ -6,6 +6,15 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta12
+>Upgrade suggestion: **HIGH**. Upgrade if you had the completion handler from prediction being called multiple times, or if you experienced a crash
+
+* Migration to the new cross-platform persistence layer
+* SDK usage analytics. Internal to Clarifai. Anonymous and not shared with third parties
+* Fixed the completion handler from prediction being called multiple times
+* Fixed a crash with a concept without a name
+* Fixed a crash including a null element to a vector
+
 ## 3.0.0-beta11
 
 >Upgrade suggestion: **HIGH**. Upgrade if you have seen a crash when predicting
