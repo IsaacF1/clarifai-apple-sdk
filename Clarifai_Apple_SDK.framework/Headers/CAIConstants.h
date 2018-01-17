@@ -22,6 +22,21 @@ extern NSString * const CAIModelDidBecomeAvailableNotification;
 /// Notification broadcasted when the SDK has finished initializing
 extern NSString * const CAIDidFinishInitializingNotification;
 
+/// Notification broadcasted when the authentication state of the SDK changes or is renewed
+extern NSString * const CAIAuthenticationNotification;
+
+/// Key to the authentication type in the payload (userInfo) of an authentication notification
+extern NSString * const CAIAuthenticationTypeKey;
+
+/// Notification broadcasted when the SDK budget usage reaches certain thresholds
+extern NSString * const CAIUsageNotification;
+
+/// Key to the current usage level of the SDK budget
+extern NSString * const CAIUsageLevelKey;
+
+/// Key to the current budget for usage of the SDK
+extern NSString * const CAIUsageBudgetKey;
+
 /// Key to a model's unique identier in payload (userInfo) of a notification.
 extern NSString * const CAIModelUniqueIdentifierKey;
 
@@ -59,5 +74,14 @@ typedef NS_ENUM(NSUInteger, CAINetworkConstraint) {
     /// Syncing with the server only happens over wifi connections.
     CAINetworkConstraintWiFiOnly
 } NS_SWIFT_NAME(NetworkConstraint);
+
+typedef NS_ENUM(NSUInteger, CAIAuthenticationType) {
+    /// Authentication failed or there is no network connectivity
+    CAIAuthenticationTypeUnknown = 0,
+    /// Authentication granted to a valid API Key
+    CAIAuthenticationTypeGranted = 1,
+    /// Authentication denied. Perhaps an invalid API Key or a revoked one
+    CAIAuthenticationTypeDenied = 2
+} NS_SWIFT_NAME(AuthenticationType);
 
 #endif

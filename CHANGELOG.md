@@ -6,6 +6,27 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta13
+>Upgrade suggestion: **MODERATE**. Upgrade if you want a faster SDK launch
+
+* Authentication of the SDK happens completely asynchronously and in a non-blocking way
+* The SDK now broadcasts a notification (`CAIAuthenticationNotification`) when the authentication state changes or is renewed. Use `CAIAuthenticationTypeKey` to retrive the authentication type from the `userInfo` property of the notification
+    ```objective-c
+    NSNumber *authenticationTypeNumber = notification.userInfo[CAIAuthenticationTypeKey];
+
+    CAIAuthenticationType authType = (CAIAuthenticationType)[authenticationTypeNumber integerValue];
+    ```
+
+* The SDK now broadcasts a notification (`CAIUsageNotification`) as the budget for local operations get used. The budget gets automatically renewed every time the SDK syncs with the cloud. This is for the cases where your app does not sync often with the cloud and you need to manage expectations of your app. Use `CAIUsageLevelKey` and `CAIUsageBudgetKey` to retrive the current usage level and the total budget, respectively
+    ```objective-c
+    NSNumber *usageLevel = notification.userInfo[CAIUsageLevelKey];
+
+    NSNumber *budget = notification.userInfo[CAIUsageBudgetKey];
+    ```
+
+* Commands called between the SDK being initialized and completing its initialization are queued and executed immediately after the initialization is finished
+* Fixed a bug where records from the usage table were not being deleted
+
 ## 3.0.0-beta12
 >Upgrade suggestion: **HIGH**. Upgrade if you had the completion handler from prediction being called multiple times, or if you experienced a crash
 
