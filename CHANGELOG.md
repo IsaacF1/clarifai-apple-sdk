@@ -6,6 +6,11 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta14
+>Upgrade suggestion: **HIGH**. Upgrade if you are using concept ids and receiving concept names instead
+
+* Fixed bug where the concept id property was being populated with the respective concept name, when performing predictions using the general model
+
 ## 3.0.0-beta13
 >Upgrade suggestion: **MODERATE**. Upgrade if you want a faster SDK launch
 
