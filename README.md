@@ -26,10 +26,10 @@ To integrate the SDK using CocoaPods, specify it in your [Podfile](https://guide
 
 ```ruby
 target '<Your Target>' do
-    platform :ios, '8.2'
+    platform :ios, '9.0'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta14'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta15'
 end
 ```
 
@@ -39,7 +39,7 @@ Install with:
 pod install --repo-update
 ```
 
-> iOS 8.2 is the minimum version supported by the Clarifai SDK.
+> iOS 9.0 is the minimum version supported by the Clarifai SDK.
 
 
 ## Manual installation
@@ -125,9 +125,9 @@ You can be notified on the progress of the availability of the SDK by registerin
 
 | Swift | Objective-C | Description |
 |:---:|:---:|:---|
-| `CAIWillFetchModel` | `CAIWillFetchModelNotification` | Broadcast right before the SDK begins fetching a model |
-| `CAIDidFetchModel` | `CAIDidFetchModelNotification` | Broadcast right after a model has been fetched |
-| `CAIModelDidBecomeAvailable` | `CAIModelDidBecomeAvailableNotification` | Broadcast when a model has become available to use |
+| `NSNotification.Name.CAIWillFetchModel` | `CAIWillFetchModelNotification` | Broadcast right before the SDK begins fetching a model |
+| `NSNotification.Name.CAIDidFetchModel` | `CAIDidFetchModelNotification` | Broadcast right after a model has been fetched |
+| `NSNotification.Name.CAIModelDidBecomeAvailable` | `CAIModelDidBecomeAvailableNotification` | Broadcast when a model has become available to use |
 
 The first two notifications usually happen only once, when you first use the SDK. After becoming available a model remains cached locally. The last notification, on the other hand, is broadcast every time the SDK is started.
 

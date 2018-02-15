@@ -10,10 +10,6 @@
 NS_SWIFT_NAME(MetricsSummary)
 @interface CAIMetricsSummary : NSObject
 
-@property (nonatomic) float top1Accuracy;
-
-@property (nonatomic) float top5Accuracy;
-
 @property (nonatomic) float macroAvgRocAuc;
 
 @property (nonatomic) float macroStdRocAuc;

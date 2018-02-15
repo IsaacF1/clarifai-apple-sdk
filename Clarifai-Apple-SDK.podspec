@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "Clarifai-Apple-SDK"
-    s.version          = "3.0.0-beta14"
+    s.version          = "3.0.0-beta15"
     s.summary          = "Clarifai Apple SDK."
 
     s.description      = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
     s.documentation_url = "https://developer.clarifai.com/docs/"
     s.requires_arc      = true
 
-    s.ios.deployment_target   = "8.2"
+    s.ios.deployment_target   = "9.0"
     s.ios.vendored_frameworks = 'Clarifai_Apple_SDK.framework'
     s.libraries               = 'c++', 'sqlite3', 'z'
     s.frameworks              = 'Accelerate', 'CoreGraphics', 'Foundation', 'UIKit'

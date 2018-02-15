@@ -6,6 +6,13 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta15
+>Upgrade suggestion: **MODERATE**. Upgrade if you want the SDK to be more proactive in triggering the fetch of the general model
+
+* Changed the default behavior of the SDK to be more proactive in fetching the general model when it is not yet cached locally
+* Upgraded the minimum requirement to iOS 9.0
+* Internal updates and improvements
+
 ## 3.0.0-beta14
 >Upgrade suggestion: **HIGH**. Upgrade if you are using concept ids and receiving concept names instead
 
