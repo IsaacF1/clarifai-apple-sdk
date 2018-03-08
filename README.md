@@ -29,7 +29,7 @@ target '<Your Target>' do
     platform :ios, '9.0'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta15'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta16'
 end
 ```
 

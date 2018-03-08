@@ -12,7 +12,7 @@
  If an image is too large and the region of interest is at the center-right of the image, you may want to crop the other parts of the image.
  */
 NS_SWIFT_NAME(Crop)
-@interface CAICrop : NSObject <NSCoding>
+@interface CAICrop : NSObject<NSCoding, NSCopying>
 
 /// Distance, as a percentage, from the top margin of the image where cropping should take place
 @property (nonatomic) float top;

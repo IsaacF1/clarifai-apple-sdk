@@ -14,7 +14,7 @@
  Image is used to represent an image in a DataAsset
  */
 NS_SWIFT_NAME(Image)
-@interface CAIImage : CAIAsset <NSCoding>
+@interface CAIImage : CAIAsset<NSCoding, NSCopying>
 
 /// Flag indicating if the same image may have more than one URL associated with it
 @property (nonatomic) BOOL allowDuplicateURL;

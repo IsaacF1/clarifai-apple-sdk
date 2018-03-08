@@ -11,14 +11,10 @@
 @class CAIEmbedding;
 @class CAIImage;
 
-typedef NS_ENUM(NSUInteger, CAIDataAssetType) {
-    CAIDataAssetTypeImage = 0,
-    CAIDataAssetTypeVideo
-} NS_SWIFT_NAME(DataAssetType);
-
+typedef NS_ENUM(NSUInteger, CAIDataAssetType) { CAIDataAssetTypeImage = 0, CAIDataAssetTypeVideo } NS_SWIFT_NAME(DataAssetType);
 
 NS_SWIFT_NAME(DataAsset)
-@interface CAIDataAsset : NSObject <NSCoding>
+@interface CAIDataAsset : NSObject<NSCoding, NSCopying>
 
 @property (nonatomic, strong, nullable, readonly) NSArray<CAIConcept *> *concepts;
 @property (nonatomic, strong, null_resettable) CAIImage *image;
@@ -30,7 +26,7 @@ NS_SWIFT_NAME(DataAsset)
 - (void)addMetadata:(nonnull NSDictionary<NSString *, id> *)metadata NS_SWIFT_NAME(add(metadata:));
 - (void)clearConcepts;
 - (void)clearMetadata;
-- (void)embeddings:(void (^ _Nonnull)(NSArray<CAIEmbedding *> * _Nullable embeddings))completionHandler;
+- (void)embeddings:(void (^_Nonnull)(NSArray<CAIEmbedding *> *_Nullable embeddings))completionHandler;
 - (void)removeConcepts:(nonnull NSArray<CAIConcept *> *)concept NS_SWIFT_NAME(remove(concepts:));
 - (void)removeMetadata:(nonnull NSDictionary<NSString *, id> *)metadata NS_SWIFT_NAME(remove(metadata:));
 

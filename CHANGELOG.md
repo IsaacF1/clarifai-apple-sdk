@@ -6,6 +6,12 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta16
+>Upgrade suggestion: **MODERATE**. Upgrade for a smaller memory footprint and faster execution
+
+* Refactored some internal classes from Objective-C to C++ for faster execution
+* Preemptively fetching the general model when the SDK starts, if not cached locally
+
 ## 3.0.0-beta15
 >Upgrade suggestion: **MODERATE**. Upgrade if you want the SDK to be more proactive in triggering the fetch of the general model
 
