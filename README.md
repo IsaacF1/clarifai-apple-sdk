@@ -1,4 +1,4 @@
-<img src="https://clarifai.com/static/images/logo.png" width="256">
+<img src="https://clarifai.com/cms-assets/20180307033326/logo2.svg" width="512">
 
 # Clarifai Apple SDK
 
