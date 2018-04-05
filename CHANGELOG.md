@@ -6,6 +6,13 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta17
+>Upgrade suggestion: **MODERATE**. Upgrade to remove the 32-bit architecture from the simulator
+
+* Internal refactoring of `Concept`, `Input`, `Output`, and `Model`, in preparation to a next generation inference engine (coming soon)
+* Removed 32-bit architecture option for the simulator (i386)
+* Updated sample app
+
 ## 3.0.0-beta16
 >Upgrade suggestion: **MODERATE**. Upgrade for a smaller memory footprint and faster execution
 

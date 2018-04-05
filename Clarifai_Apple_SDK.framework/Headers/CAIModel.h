@@ -13,7 +13,7 @@
 @class CAIOutput;
 
 NS_SWIFT_NAME(Model)
-@interface CAIModel : CAIDataModel <NSCoding>
+@interface CAIModel : CAIDataModel<NSCoding>
 
 /// The app id the model is associated with.
 @property (nonatomic, strong, nullable) NSString *appId;
@@ -38,14 +38,14 @@ NS_SWIFT_NAME(Model)
 
 - (nonnull instancetype)initWithId:(nullable NSString *)modelId name:(nullable NSString *)name NS_SWIFT_NAME(init(id:name:));
 
-- (void)predict:(nonnull NSArray<CAIInput *> *)inputs completionHandler:(void (^ _Nonnull)(NSArray<CAIOutput *> * _Nullable outputs, NSError * _Nullable error))completionHandler;
+- (void)predict:(nonnull NSArray<CAIInput *> *)inputs completionHandler:(void (^_Nonnull)(NSArray<CAIOutput *> *_Nullable outputs, NSError *_Nullable error))completionHandler;
 
-- (void)trainWithConcepts:(nonnull NSArray<CAIConcept *> *)concepts completionHandler:(void (^ _Nonnull)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(train(concepts:completionHandler:));
+- (void)trainWithConcepts:(nonnull NSArray<CAIConcept *> *)concepts completionHandler:(void (^_Nonnull)(NSError *_Nullable error))completionHandler NS_SWIFT_NAME(train(concepts:completionHandler:));
 
-- (void)trainWithConcepts:(nonnull NSArray<CAIConcept *> *)concepts inputs:(nonnull NSArray<CAIInput *> *)inputs completionHandler:(void (^ _Nonnull)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(train(concepts:inputs:completionHandler:));
+- (void)trainWithConcepts:(nullable NSArray<CAIConcept *> *)concepts inputs:(nullable NSArray<CAIInput *> *)inputs completionHandler:(void (^_Nonnull)(NSError *_Nullable error))completionHandler NS_SWIFT_NAME(train(concepts:inputs:completionHandler:));
 
-- (void)trainWithInputs:(nonnull NSArray<CAIInput *> *)inputs completionHandler:(void (^ _Nonnull)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(train(inputs:completionHandler:));
+- (void)trainWithInputs:(nonnull NSArray<CAIInput *> *)inputs completionHandler:(void (^_Nonnull)(NSError *_Nullable error))completionHandler NS_SWIFT_NAME(train(inputs:completionHandler:));
 
-- (void)update:(void (^ _Nonnull)(NSError * _Nullable error))completionHandler;
+- (void)update:(void (^_Nonnull)(NSError *_Nullable error))completionHandler;
 
 @end

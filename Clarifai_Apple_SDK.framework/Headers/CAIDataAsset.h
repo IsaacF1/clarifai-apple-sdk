@@ -11,7 +11,10 @@
 @class CAIEmbedding;
 @class CAIImage;
 
-typedef NS_ENUM(NSUInteger, CAIDataAssetType) { CAIDataAssetTypeImage = 0, CAIDataAssetTypeVideo } NS_SWIFT_NAME(DataAssetType);
+typedef NS_ENUM(NSUInteger, CAIDataAssetType) {
+    CAIDataAssetTypeImage = 0,
+    CAIDataAssetTypeVideo,
+} NS_SWIFT_NAME(DataAssetType);
 
 NS_SWIFT_NAME(DataAsset)
 @interface CAIDataAsset : NSObject<NSCoding, NSCopying>

@@ -102,7 +102,7 @@ class TrainingController: UIViewController, UICollectionViewDataSource ,UICollec
     }
 
     // MARK: general internal methods
-    internal func dismissKeyboard() {
+    @objc internal func dismissKeyboard() {
         self.view.endEditing(true)
     }
 

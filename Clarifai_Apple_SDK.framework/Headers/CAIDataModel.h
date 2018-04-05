@@ -13,12 +13,12 @@ typedef NS_ENUM(NSUInteger, CAIEntityType) {
     CAIEntityTypeInput,
     CAIEntityTypeModel,
     CAIEntityTypeOutput,
-    CAIEntityTypeSearchResult
+    CAIEntityTypeSearchResult,
 } NS_SWIFT_NAME(EntityType);
 
 NS_SWIFT_NAME(DataModel)
-@interface CAIDataModel : NSObject <NSCoding> {
-@protected
+@interface CAIDataModel : NSObject<NSCoding> {
+    @protected
     CAIEntityType _entityType;
 }
 

@@ -30,7 +30,7 @@ function strip_framework() {
         echo ${PLATFORM_NAME} > ${activePlatformFile}
 
         if [[ ${PLATFORM_NAME} == "iphoneos" ]]; then
-            architectures=("i386" "x86_64")
+            architectures=("x86_64")
         elif [[ ${PLATFORM_NAME} == "iphonesimulator" ]]; then
             architectures=("armv7" "arm64")
         fi

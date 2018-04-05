@@ -10,7 +10,7 @@
 /** Concept is used to describe an attribute of a data asset.
  */
 NS_SWIFT_NAME(Concept)
-@interface CAIConcept : CAIDataModel <NSCoding>
+@interface CAIConcept : CAIDataModel<NSCoding, NSCopying>
 
 /// Concept's unique id.
 @property (nonatomic, strong, nonnull) NSString *conceptId NS_SWIFT_NAME(id);

@@ -29,7 +29,7 @@ target '<Your Target>' do
     platform :ios, '9.0'
     use_frameworks!
 
-    pod 'Clarifai-Apple-SDK', '3.0.0-beta16'
+    pod 'Clarifai-Apple-SDK', '3.0.0-beta17'
 end
 ```
 
@@ -78,7 +78,7 @@ git clone https://github.com/Clarifai/clarifai-apple-sdk.git
 
 5. Create a new **Run Script Build Phase** (Xcode > Editor > Add Build Phase > Add Run Script Build Phase). In the execution line enter:
     ```bash
-    "$(PROJECT_DIR)/Clarifai/setup_framework.sh"
+    "$PROJECT_DIR/Clarifai/setup_framework.sh"
     ```
 
 6. Make sure the position of the new **Run Script** is after **Compile Sources** and before **Link Binary With Libraries**. If needed drag and drop it to the right position.
