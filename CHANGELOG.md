@@ -6,6 +6,13 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta20
+>Upgrade suggestion: **HIGH**. Upgrade if you are using a previous build
+
+* Faster prediction results
+* Bug fixes and improvements
+* Previous beta versions will be removed
+
 ## 3.0.0-beta17
 >Upgrade suggestion: **MODERATE**. Upgrade to remove the 32-bit architecture from the simulator
 
