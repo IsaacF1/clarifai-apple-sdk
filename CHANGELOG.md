@@ -6,6 +6,11 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta21
+>Upgrade suggestion: **HIGH**. Upgrade if you have a rare crash with token authentication
+
+* Fixed a race condition that could cause tokens to crash the SDK
+
 ## 3.0.0-beta20
 >Upgrade suggestion: **HIGH**. Upgrade if you are using a previous build
 
