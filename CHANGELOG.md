@@ -6,6 +6,11 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta22
+>Upgrade suggestion: **HIGH**. Upgrade if you see a crash when loading the general model
+
+* If the general model fails to download or is corrupted after download, the SDK will catch the exception and repeat the process and request a new one
+
 ## 3.0.0-beta21
 >Upgrade suggestion: **HIGH**. Upgrade if you have a rare crash with token authentication
 
