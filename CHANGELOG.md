@@ -6,6 +6,12 @@
 >* **HIGH**: This is an important release or there is a bug that may affect a subset of users. Upgrade!
 >* **CRITICAL**: There is a critical bug affecting _most users_. Upgrade ASAP!
 
+## 3.0.0-beta24
+>Upgrade suggestion: **CRITICAL**. Upgrade if you're using beta 22 or building for iOS 12
+
+* Fixes a bug that could cause authentication to freeze all SDK operations
+* This version has been compiled and tested with iOS 12
+
 ## 3.0.0-beta22
 >Upgrade suggestion: **HIGH**. Upgrade if you see a crash when loading the general model
 
